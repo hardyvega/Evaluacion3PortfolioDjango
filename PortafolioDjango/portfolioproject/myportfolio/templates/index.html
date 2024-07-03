@@ -1,0 +1,248 @@
+{% load static %}
+{% load bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <title>Portafolio</title>
+    {% bootstrap_css %}
+
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href={%static 'css/styles.css'%}>
+
+</head>
+<body>
+    <!-- SECCION INICIO-->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <h1>/HV/</h1>
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                            <li><a href="#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
+                            <li><a href="#servicios" onclick="seleccionar(this)">SERVICIOS</a></li>
+                            <li><a href="#portfolio" onclick="seleccionar(this)">PORTFOLIO</a></li>
+                            <li><a href="#contacto" onclick="seleccionar(this)">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Iconos del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                    <!-- Iconos de las redes sociales-->
+                    <div class="redes">
+                        <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                </div>
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">Bienvenidos</p>
+                <h2>Soy  <span>Hardy Vega</span>, Ingeniero Informático</h2>
+                <p class="descripcion"> En este portafolio web, conocerás un poco más sobre mí, mis habilidades, servicios y proyectos.</p>
+
+                    <a href="#portfolio">Ir a Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi">
+        <div class="contenedor-foto">
+            <img src="{% static 'img/fotoperfil.png'%}" alt="foto1">
+        </div>
+        <div class="sobremi">
+            <p class="titulo-seccion">Sobre Mi</p>
+            <h2>Hola, soy <span>Hardy Vega</span></h2>
+            <h3>Ingeniero Informático</h3>
+            <p>Soy un apasionado desarrollador Full Stack con 
+            competencias en una amplia gama de tecnologías y 
+            lenguajes de programación. Me especializo en aplicar tanto 
+            metodologías ágiles como tradicionales para garantizar la eficiencia 
+            y la calidad en mis proyectos.</p>
+            <a href="https://www.linkedin.com/in/hardy-vega-almonacid-062202291/">Ir a Linkedin</a>
+        </div>
+    </section>
+
+    <!-- SECCION SERVICIOS -->
+    <section id="servicios">
+        <h3 class="titulo-seccion">MIS SERVICIOS</h3>
+        <div class="fila">
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-code"></i></span>
+                <h4>Diseño de Sitios Web</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+                <p>Me especializo en la creación de sitios web modernos y 
+                    funcionales, utilizando las últimas tecnologías y 
+                    las mejores prácticas en el desarrollo web.</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-database"></i></span>
+                <h4>Base de datos SQL</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>SQL</li>
+                    <li>DEVELOPER</li>
+                    <li>ORACLE</li>
+                </ul>
+                <p>Experiencia como programador de bases de datos, 
+                    especialmente en SQL y Oracle.</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-brands fa-java"></i></span>
+                <h4>Desarrollador JAVA</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Interfaces</li>
+                    <li>Diseño</li>
+                    <li>Programacion</li>
+                </ul>
+                <p>Programador especializado en Java, con experiencia en la creación 
+                    de interfaces de usuario eficientes y atractivas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION HABILIDADES -->
+    <div class="contenedor-skills" id="skills">
+        <h3>HABILIDADES</h3>
+        <div class="skill">
+            <div class="info">
+                <p><span class="lista"></span>Html & Css</p>
+                <span class="porcentaje">89%</span>
+            </div>
+            <div class="barra">
+                <div id="html" class="barra-progreso1"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="info">
+                <p><span class="lista"></span>JavaScript</p>
+                <span class="porcentaje">92%</span>
+            </div>
+            <div class="barra">
+                <div id="js" class="barra-progreso2"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="info">
+                <p><span class="lista"></span>Base de datos</p>
+                <span class="porcentaje">90%</span>
+            </div>
+            <div class="barra">
+                <div id="bd" class="barra-progreso3"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="info">
+                <p><span class="lista"></span>Java</p>
+                <span class="porcentaje">95%</span>
+            </div>
+            <div class="barra">
+                <div id="jv" class="barra-progreso4"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCION PORTAFOLIO -->
+    <section id="portfolio">
+        <h3 class="titulo-seccion">Mi Proyecto</h3>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="{% static 'img/clima.jpg'%}" alt="">
+                <div class="info">
+                    <h4>Descripcion del Proyeto</h4>
+                    <p>Api clima</p>
+                    <a href="/static/API-clima/index.html" class="api-link">IR A API</a> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects section-->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center">My Projects</h2>
+            <div class="row">
+                {% for proyecto in proyecto %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}">
+                        <div class="card-body">
+                            <h5 class="card-tittle">{{ proyecto.titulo }}</h5>
+                            <p class="card-text">{{ proyecto.descripcion }}</p>
+                            <a href="{{ proyecto.link_sitio }}" class="btn bnt-primary" target="_blank">View Site</a>
+                            <a href="{{ proyecto.link_repositorio }}" class="btn btn-secondary" target="_blank">view Repo</a>
+                            <a href="{% url 'proyecto_detalle' proyecto.pk %}" class="btn btn-info">Ver Detalle</a> <!-- Nuevo botón -->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- SECCION CONTACTO -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Contáctame</h2>
+            <!-- Formulario -->
+            <form method="POST" action="https://formsubmit.co/ha.vega@duocuc.cl" class="needs-validation" novalidate>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="id_nombre" name="nombre" required>
+                    <div class="invalid-feedback">Por favor ingresa un nombre.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="id_email" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="id_nombre" name="email" required>
+                    <div class="invalid-feedback">Por favor ingresa un correo.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="id_mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="id_mensaje" name="mensaje" rows="3" required></textarea>
+                    <div class="invalid-feedback">Por favor ingresa un mensaje.</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+      <!-- PIE DE PAGINA -->
+      <footer>
+        <p>Mi Portfolio Web Hardy Vega. Todos los derechos reservados 2024</p>
+        <div class="redes">
+            <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a>
+        </div>
+    </footer>
+
+    {% bootstrap_javascript%}
+    <script> src = "{% static 'js/script.js'%}"</script>
+
+</body>
+</html>   
